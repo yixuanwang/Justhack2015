@@ -11,6 +11,13 @@
                 <h1>Montreal Birth Companions</h1>
             </div>
             <div class="container">
+                <% if @client.errors.any? %>
+                  <div class="alert alert-danger" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    <%= @client.errors.full_messages[0] %>
+                  </div>
+                <% end %>
                 <h1>CLIENT INFORMATION SHEET</h1>
                 <%= form_for(@client) do |f| %>
                     <fieldset>
@@ -97,19 +104,19 @@
                         <legend>Current Pregnancy</legend>
                         <table class="table">
                             <tr>
-                                <td>Nutrition: <%= f.text_area :Nutrition, class: 'form-control', cols: 50, row: 1 %></textarea></td>
-                                <td>Exercise: <%= f.text_area :Exercise, class: 'form-control', cols: 50, row: 1 %></textarea></td>
+                                <td>Nutrition: <%= f.text_area :Nutrition, class: 'form-control', cols: 50, row: 1 %></td>
+                                <td>Exercise: <%= f.text_area :Exercise, class: 'form-control', cols: 50, row: 1 %></td>
                             </tr>
                             <tr>
-                                <td>General State of Health: <%= f.text_area :GenStateHealth, class: 'form-control', cols: 50, row: 1 %></textarea></td>
-                                <td>Emotional Well-Being: <%= f.text_area :EmotionalWellBeing, class: 'form-control', cols: 50, row: 1 %></textarea></td>
+                                <td>General State of Health: <%= f.text_area :GenStateHealth, class: 'form-control', cols: 50, row: 1 %></td>
+                                <td>Emotional Well-Being: <%= f.text_area :EmotionalWellBeing, class: 'form-control', cols: 50, row: 1 %></td>
                             </tr>
                             <tr>
-                                <td>Rest and Sleep: <%= f.text_area :RestAndSleep, class: 'form-control', cols: 50, row: 1 %></textarea></td>
-                                <td>Supplements and Drugs: <%= f.text_area :SupplNdrugs, class: 'form-control', cols: 50, row: 1 %></textarea></td>
+                                <td>Rest and Sleep: <%= f.text_area :RestAndSleep, class: 'form-control', cols: 50, row: 1 %></td>
+                                <td>Supplements and Drugs: <%= f.text_area :SupplNdrugs, class: 'form-control', cols: 50, row: 1 %></td>
                             </tr>
                             <tr>
-                                <td colspan="2">Concerns: <%= f.text_area :Concerns, class: 'form-control', cols: 50, row: 1 %></textarea></td>
+                                <td colspan="2">Concerns: <%= f.text_area :Concerns, class: 'form-control', cols: 50, row: 1 %></td>
                             </tr>
                         </table>
                     </fieldset>

@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   get 'clients/new' => 'clients#form'
+  get 'clients/:id' => 'clients#show'
   post 'clients' => 'clients#create'
+  get 'clients' => 'clients#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

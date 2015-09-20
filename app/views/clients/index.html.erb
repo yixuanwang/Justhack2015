@@ -29,6 +29,18 @@
 		                </tr>
 	                </thead>
 	                <tbody>
+					<% @client.each do |client| %>
+		                <tr>
+		                    <th scope="row"><input type="checkbox" name="" value=""></th>
+		                    <td><%= @status.inspect %></td>
+		                    <td>09-26-15</td>
+		                    <td>Montreal</td>
+		                    <td>French, english</td>
+		                    <td>Doulas number-one, assistant number-one, mentor number-one</td>
+		                    <td>description: Vivamus condimentum, ligula a iaculis dignissim, odio diam varius dolor, id dapibus dolor massa ut quam. Aliquam quis odio id enim convallis rhoncus. Aliquam felis ipsum, egestas id elementum vel, ullamcorper et est. Quisque a molestie mauris. Aliquam efficitur vel tortor ut sodales. Vivamus vel varius est. Nullam at augue ante.</td>
+		                </tr>
+					<% end %>
+
 		                <tr>
 		                    <th scope="row"><input type="checkbox" name="" value=""></th>
 		                    <td>Available</td>

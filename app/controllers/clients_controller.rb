@@ -1,4 +1,5 @@
 class ClientsController < ApplicationController
+  before_action :set_client, only: [:show]
 	@status = ['Available', 'Reserved', 'Taken']
 
   def index
@@ -21,11 +22,15 @@ class ClientsController < ApplicationController
     end
 	end
 
-  def index
+  def show
     
   end
 	
   private 
+    def set_client
+      @client = Client.find(params[:id])
+    end
+
 		def client_params
 
 			params.require(:client).permit(

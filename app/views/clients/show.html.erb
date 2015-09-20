@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Montreal Birth Companions</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="container">
+            <div id="header">
+                <h1>Montreal Birth Companions</h1>
+            </div>
+            <div class="container">
+                <h1>CLIENT INFORMATION SHEET</h1>
+                  <fieldset>
+                      <legend>Assigned Doulas</legend>
+                      Assigned MBC Doula: <%= @client.mbcDoulaName%>
+                      <br>
+                      Back-Up Doula: <%= @client.backupDoulaName%>
+                      <br>
+                      Mentor Doula: <%= @client.mentorDoublaName%>
+                      <br>
+                  </fieldset>
+                  Referred by: <%= @client.referralName%>
+                  <br>
+                  <fieldset>
+                      <legend>Client Information</legend>
+                      <table class="table">                           
+                          <tbody>
+                              <tr>
+                                  <td>Client Name: <%= @client.clientName%></td>
+                                  <td>Maiden Name: <%= @client.maidenName%></td>
+                                  <td>Age: <%= @client.clientAge%></td>
+                              </tr>
+                              <tr>
+                                  <td>Partner Name: <%= @client.partnerName%></td>
+                                  <td>Language Spoken: <%= @client.clientLanguage%></td>
+                                  <td>Expected Due Date: <%= @client.exepectedDueDate%></td>
+                              </tr>
+                              <tr>
+                                  <td>Phone Number: <%= @client.clientNumber%></td>
+                                  <td></td>
+                                  <td></td>
+                              </tr>
+                          </tbody>
+                      </table>
+                      <table class="table">
+                          <thead>
+                              <tr>
+                                  <th>Address</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td rowspan="3">Address Line: <%= @client.clientAddrLine%></td>
+                                  <td>City: <%= @client.clientCity%></td>
+                              </tr>
+                              <tr>
+                                  <td>Province: <%= @client.clientProvince%></td>
+                              </tr>
+                              <tr>
+                                  <td>Postal Code: <%= @client.clientPostalCode%></td>
+                              </tr>
+                              <tr>
+                                  <td>Planned Place of Birth: <%= @client.plannedPlaceOfBirth%></td>
+                                  <td>Caregiver: <%= @client.caregiverName%></td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </fieldset>
+                  <fieldset>
+                      <legend>Previous Pregnancies</legend>
+                      <table class="table">
+                          <tr>
+                              <td>Number of Children: <%= @client.numChildren%></td>
+                              <td>Number of Pregnancies: <%= @client.numPregnancies%></td>
+                          </tr>
+                          <tr>
+                              <td colspan="2">Previous Labours</td>
+                          </tr>
+                          <tr>
+                              <td colspan="2">Details: <%= @client.labourDetails%></td>
+                          </tr>
+                      </table>
+                  </fieldset>
+                  <fieldset>
+                      <legend>Health</legend>
+                      <table class="table">
+                          <tr>
+                              <td>Health History: <%= @client.clientHealthHistory%></td>
+                              <td>Health History: <%= @client.clientFamilyHealthHistory%></td>
+                          </tr>
+                      </table>
+                  </fieldset>
+                  <fieldset>
+                      <legend>Current Pregnancy</legend>
+                      <table class="table">
+                          <tr>
+                              <td>Nutrition: <%= @client.Nutrition%></td>
+                              <td>Exercise: <%= @client.Exercise%></td>
+                          </tr>
+                          <tr>
+                              <td>General State of Health: <%= @client.GenStateHealth%></td>
+                              <td>Emotional Well-Being: <%= @client.EmotionalWellBeing%></td>
+                          </tr>
+                          <tr>
+                              <td>Rest and Sleep: <%= @client.RestAndSleep%></td>
+                              <td>Supplements and Drugs: <%= @client.SupplNdrugs%></td>
+                          </tr>
+                          <tr>
+                              <td colspan="2">Concerns: <%= @client.Concerns%></td>
+                          </tr>
+                      </table>
+                  </fieldset>
+            </div>
+        </div>
+    </body>
+</html>
