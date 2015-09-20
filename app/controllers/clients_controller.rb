@@ -14,8 +14,8 @@ class ClientsController < ApplicationController
 
   def action
     @params = params[:options]
-    if @params = "request"
-      requestList = current_user.requestList.to_s.split(',').push(params[:id]).join(',')
+    if @params == "request"
+      requestList = current_user.requestList.to_s.split(',').push(params[:id]).uniq.join(',')
       if current_user.update({requestList: requestList})
         if Client.find(params[:id]).update({formStatus: 1})
           redirect_to ''
@@ -27,8 +27,15 @@ class ClientsController < ApplicationController
       end
 
 
-    elsif @params = "bookmark"
-
+    elsif @params == "bookmark"
+      bookmarkList = current_user.bookmarkList.to_s.split(',').push(params[:id]).uniq.join(',')
+      if current_user.update({bookmarkList: bookmarkList})
+        redirect_to ''
+      else
+        render 'index'
+      end
+    else
+      render :inline => "<%= @params.inspect %>"
     end
         
 

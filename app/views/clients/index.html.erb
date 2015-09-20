@@ -4,7 +4,6 @@
 		<title>Montreal Birth Companions</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <meta charset="UTF-8">
-        <%= stylesheet_link_tag "stylesheet.css" %>
     </head>
 	<body>
 	    <div class="container">
@@ -72,6 +71,27 @@
 	                <div class="panel-body">
 	                    <p>
 	                        You are currently following the cases below:
+            	         	<table class="table">
+				                <tbody>
+							          	<% current_user.bookmarkList.to_s.split(',').each do |x| 
+							          		client = Client.find(x)%>
+					                <tr>
+					                    <th scope="row"><input type="checkbox" name="id" value="<%= client.id %>"></th>
+					                    <td><%= @status[client.formStatus.to_i] %></td>
+					                    <td><%= client.exepectedDueDate %></td>
+					                    <td><%= client.clientAddrLine %></td>
+					                    <td><%= client.clientLanguage %></td>
+					                    <td><ul class="list-unstyled">
+					                    		<li>Doulas: <%= client.mbcDoulaName %></li>
+					                    		<li>Assistant: <%= client.backupDoulaName %></li>
+					                    		<li>Mentor: <%= client.mentorDoublaName %></li>
+					                    	</ul>
+					                    </td>
+					                    <td><%= link_to "Learn more", client_path(client) %></td>
+					                </tr>
+								          <% end %>
+				                </tbody>
+				            </table>	
 	                    </p>
 	                </div>
 	                  
