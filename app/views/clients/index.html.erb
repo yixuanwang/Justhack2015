@@ -16,6 +16,7 @@
 	            </p>
 	        </div>
 	        <div>
+              <%= form_for(:actions, url: :action) do |f| %>
 	         	<table class="table">
 	                <thead>
 	                    <tr>
@@ -29,47 +30,37 @@
 		                </tr>
 	                </thead>
 	                <tbody>
-					<% @client.each do |client| %>
+				          	<% @client.each do |client| %>
 		                <tr>
-		                    <th scope="row"><input type="checkbox" name="" value=""></th>
-		                    <td><%= @status.inspect %></td>
-		                    <td>09-26-15</td>
-		                    <td>Montreal</td>
-		                    <td>French, english</td>
-		                    <td>Doulas number-one, assistant number-one, mentor number-one</td>
-		                    <td>description: Vivamus condimentum, ligula a iaculis dignissim, odio diam varius dolor, id dapibus dolor massa ut quam. Aliquam quis odio id enim convallis rhoncus. Aliquam felis ipsum, egestas id elementum vel, ullamcorper et est. Quisque a molestie mauris. Aliquam efficitur vel tortor ut sodales. Vivamus vel varius est. Nullam at augue ante.</td>
+		                    <th scope="row"><input type="checkbox" name="id" value="<%= client.id %>"></th>
+		                    <td><%= @status[client.formStatus.to_i] %></td>
+		                    <td><%= client.exepectedDueDate %></td>
+		                    <td><%= client.clientAddrLine %></td>
+		                    <td><%= client.clientLanguage %></td>
+		                    <td><ul class="list-unstyled">
+		                    		<li>Doulas: <%= client.mbcDoulaName %></li>
+		                    		<li>Assistant: <%= client.backupDoulaName %></li>
+		                    		<li>Mentor: <%= client.mentorDoublaName %></li>
+		                    	</ul>
+		                    </td>
+		                    <td><%= link_to "Learn more", client_path(client) %></td>
 		                </tr>
-					<% end %>
-
-		                <tr>
-		                    <th scope="row"><input type="checkbox" name="" value=""></th>
-		                    <td>Available</td>
-		                    <td>09-26-15</td>
-		                    <td>Montreal</td>
-		                    <td>French, english</td>
-		                    <td>Doulas number-one, assistant number-one, mentor number-one</td>
-		                    <td>description: Vivamus condimentum, ligula a iaculis dignissim, odio diam varius dolor, id dapibus dolor massa ut quam. Aliquam quis odio id enim convallis rhoncus. Aliquam felis ipsum, egestas id elementum vel, ullamcorper et est. Quisque a molestie mauris. Aliquam efficitur vel tortor ut sodales. Vivamus vel varius est. Nullam at augue ante.</td>
-		                </tr>
-		                <tr>
-		                    <th scope="row"><input type="checkbox" name="" value="" disabled></th>
-		                    <td>Taken</td>
-		                    <td>12-12-15</td>
-		                    <td>Montreal</td>
-		                    <td>French</td>
-		                    <td>Doulas number-two, assistant number-two, mentor number-two</td>
-		                    <td>description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non scelerisque purus. Nulla ut dictum leo. In bibendum faucibus ante et rutrum. Proin nec turpis iaculis, consectetur nisl eget, sagittis urna. Sed sodales dignissim nisi, in tincidunt sapien convallis quis. Curabitur posuere erat at magna porta fermentum. Morbi pellentesque enim dignissim, cursus tellus sed, pretium sapien. Proin eu eleifend felis, non bibendum purus.</td>
-		                </tr>
-		                <tr>
-		                    <th scope="row"><input type="checkbox" name="" value=""></th>
-		                    <td>Available</td>
-		                    <td>01-13-16</td>
-		                    <td>Montreal</td>
-		                    <td>English</td>
-		                    <td>Doulas number-three, assistant number-three, mentor number-three</td>
-		                    <td>description: Suspendisse potenti. In hac habitasse platea dictumst. Etiam purus nunc, facilisis non tortor a, pulvinar pretium nisl. Etiam nec magna tristique dui convallis ultrices in sed odio. Suspendisse urna mauris, commodo eu lacus porta, faucibus dapibus tortor. Donec sit amet lorem aliquet, egestas tellus a, elementum magna. Vestibulum vel eleifend nunc.</td>
-		                </tr>
+					          <% end %>
 	                </tbody>
 	            </table>	
+
+
+                <div class="form-group">
+                  <div class="col-sm-4">
+                    <select class="form-control" name="options">
+                      <option value="request">Request</option>
+                      <option value="bookmark">Bookmark</option>
+                    </select>
+                  </div>
+                  <input class="btn btn-default" type="submit" />
+                </div>
+              <% end %>
+
 	        </div>
 	        <div id="bookmarkedBirthings">
 	        	<div class="panel panel-default">

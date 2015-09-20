@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
   
-  devise_for :users
+  devise_for :users, controller: {profiles: :profiles}
 
   get 'clients/new' => 'clients#form'
-  get 'clients/:id' => 'clients#show'
+  get 'clients/:id' => 'clients#show', as: 'client'
   post 'clients' => 'clients#create'
+  post 'clients/action' => 'clients#action', as: 'action'
   get 'clients' => 'clients#index'
+  devise_scope :user do 
+    get "profile" => "users/profiles#profile"
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
