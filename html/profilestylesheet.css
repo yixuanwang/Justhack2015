@@ -1,0 +1,13 @@
+img.float {
+	margin: auto;
+	border: 0.5em double #6f8ae7;
+	background-color: #6fe7cc;
+}
+
+p.briefmsg {
+	text-align: center;
+}
+
+.centertext {
+	text-align: center;
+}
