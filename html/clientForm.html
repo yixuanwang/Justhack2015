@@ -44,23 +44,72 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <table>
+                        <table class = "table">
                             <thead>
                                 <tr>
-                                    <th>header</th>
+                                    <th>Address</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>data</td>
+                                    <td rowspan="3">Address Line: <textarea name="clientAddLine" rows ="1" cols = "30" placeholder="6750 avenue de l'Espanade"></textarea></td>
+                                    <td>City: <input type="text" name="clientCity" placeholder="Montréal"></td>
+                                </tr>
+                                <tr>
+                                    <td>Province: <input type="text" name="clientProvince" placeholder="Quebec"></td>
+                                </tr>
+                                <tr>
+                                    <td>Postal Code: <input type="text" name="clientPostalCode" placeholder="H2V 4M1" size = "7"></td>
+                                </tr>
+                                <tr>
+                                    <td>Planned Place of Birth: <textarea name="plannedPlaceOfBirth" rows = "1" cols = "50"></textarea></td>
+                                    <td>Caregiver: <input type="text" name="caregiverName" placeholder="First Last"></td>
                                 </tr>
                             </tbody>
                         </table>
-                                <tr>
-                                    <td>Address Line 1: <input type="text" name="clientAdd1"placeholder="102-6750 avenue de l'Espanade Montréal H2V 4M1"></td>
-                                    <td>
-                                </tr>
-                            </tbody>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Previous Pregnancies</legend>
+                        <table class="table">
+                            <tr>
+                                <td>Number of Children: <input type="number" name="numChildren" min="0"></td>
+                                <td>Number of Pregnancies: <input type="number" name="numPregnancies"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Previous Labours</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Details: <textarea name="LabourDetails" rows = "1" cols = "100"></textarea></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Health</legend>
+                        <table class = "table">
+                            <tr>
+                                <td>Health History: <textarea name="clientHealthHistory" cols = "50" rows="1" placeholder="Heart Attack, Infection, Asthma, Stroke, etc."></textarea></td>
+                                <td>Family History: <textarea name="clientFamilyHealthHistory" cols = "50" rows="1" placeholder="siblings, their births, mother's births"></textarea></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Current Pregnancy</legend>
+                        <table class="table">
+                            <tr>
+                                <td>Nutrition: <textarea name="Nutrition" cols="50" rows="1"></textarea></td>
+                                <td>Exercise: <textarea name="Exercise" cols="50" rows="1"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td>General State of Health: <textarea name="GenStateHealth" id="" cols="50" rows="1"></textarea></td>
+                                <td>Emotional Well-Being: <textarea name="EmotionalWellBeing" id="" cols="50" rows="1"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td>Rest and Sleep: <textarea name="RestAndSleep" id="" cols="50" rows="1"></textarea></td>
+                                <td>Supplements and Drugs: <textarea name="SupNdrugs" id="" cols="50" rows="1"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Concerns: <textarea name="Concerns" id="" cols="60" rows="1"></textarea></td>
+                            </tr>
                         </table>
                     </fieldset>
                 </form>
