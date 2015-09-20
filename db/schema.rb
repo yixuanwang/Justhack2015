@@ -11,7 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150920004643) do
+ActiveRecord::Schema.define(version: 20150920011146) do
+
+  create_table "clients", force: :cascade do |t|
+    t.string   "mbcDoulaName"
+    t.string   "backupDoulaName"
+    t.string   "mentorDoublaName"
+    t.string   "referralName"
+    t.string   "clientName"
+    t.string   "maidenName"
+    t.integer  "clientAge"
+    t.string   "partnerName"
+    t.string   "clientLanguage"
+    t.date     "exepectedDueDate"
+    t.integer  "clientNumber"
+    t.string   "clientAddrLine"
+    t.string   "clientCity"
+    t.string   "clientProvince"
+    t.string   "clientPostalCode"
+    t.string   "plannedPlaceOfBirth"
+    t.string   "caregiverName"
+    t.integer  "numChildren"
+    t.integer  "numPregnancies"
+    t.text     "labourDetails"
+    t.text     "clientHealthHistory"
+    t.text     "clientFamilyHealthHistory"
+    t.text     "Nutrition"
+    t.text     "Exercise"
+    t.text     "GenStateHealth"
+    t.text     "EmotionalWellBeing"
+    t.text     "RestAndSleep"
+    t.text     "SupplNdrugs"
+    t.text     "Concerns"
+    t.integer  "formStatus"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

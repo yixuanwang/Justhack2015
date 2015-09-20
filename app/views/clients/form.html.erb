@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Montreal Birth Companions</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="container">
+            <div id="header">
+                <h1>Montreal Birth Companions</h1>
+            </div>
+            <div class="container">
+                <h1>CLIENT INFORMATION SHEET</h1>
+                <%= form_for(@client) do |f| %>
+                    <fieldset>
+                        <legend>Assigned Doulas</legend>
+                        Assigned MBC Doula: <%= f.text_field :mbcDoulaName, class: 'form-control', placeholder: 'First Last' %>
+                        <br>
+                        Back-Up Doula: <%= f.text_field :backupDoulaName, class: 'form-control', placeholder: 'First Last' %>
+                        <br>
+                        Mentor Doula: <%= f.text_field :mentorDoublaName, class: 'form-control', placeholder: 'First Last' %>
+                        <br>
+                    </fieldset>
+                    Referred by: <%= f.text_field :referralName, class: 'form-control', placeholder: 'First Last' %>
+                    <br>
+                    <fieldset>
+                        <legend>Client Information</legend>
+                        <table class="table">                           
+                            <tbody>
+                                <tr>
+                                    <td>Client Name: <%= f.text_field :clientName, class: 'form-control', placeholder: 'First Last' %></td>
+                                    <td>Maiden Name: <%= f.text_field :maidenName, class: 'form-control', placeholder: 'First Last' %></td>
+                                    <td>Age: <%= f.number_field :clientAge, class: 'form-control', min: 0, max: 200 %></td>
+                                </tr>
+                                <tr>
+                                    <td>Partner Name: <%= f.text_field :partnerName, class: 'form-control', placeholder: 'First Last' %></td>
+                                    <td>Language Spoken: <%= f.text_field :clientLanguage, class: 'form-control', placeholder: 'English' %></td>
+                                    <td>Expected Due Date: <%= f.date_field :exepectedDueDate, class: 'form-control', placeholder: 'YYYY-MM-DD' %></td>
+                                </tr>
+                                <tr>
+                                    <td>Phone Number: <%= f.telephone_field :clientNumber, class: 'form-control', placeholder: '000-000-0000' %></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Address</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="3">Address Line: <%= f.text_area :clientAddrLine, class: 'form-control', rows: 1, cols: 30, placeholder: '6750 avenue de l\'Espanade' %></td>
+                                    <td>City: <%= f.text_field :clientCity, class: 'form-control', placeholder: 'Montreal' %></td>
+                                </tr>
+                                <tr>
+                                    <td>Province: <%= f.text_field :clientProvince, class: 'form-control', placeholder: 'Quebec' %></td>
+                                </tr>
+                                <tr>
+                                    <td>Postal Code: <%= f.text_field :clientPostalCode, class: 'form-control', placeholder: 'H2V 4M1' %></td>
+                                </tr>
+                                <tr>
+                                    <td>Planned Place of Birth: <%= f.text_area :plannedPlaceOfBirth, class: 'form-control', rows: 1, cols: 50 %></td>
+                                    <td>Caregiver: <%= f.text_field :caregiverName, class: 'form-control', placeholder: 'First Last' %></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Previous Pregnancies</legend>
+                        <table class="table">
+                            <tr>
+                                <td>Number of Children: <%= f.number_field :numChildren, class: 'form-control', min: 0 %></td>
+                                <td>Number of Pregnancies: <%= f.number_field :numPregnancies, class: 'form-control' %></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Previous Labours</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Details: <%= f.text_area :labourDetails, class: 'form-control', rows: 1, cols: 100 %></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Health</legend>
+                        <table class="table">
+                            <tr>
+                                <td>Health History: <%= f.text_area :clientHealthHistory, class: 'form-control', cols: 50, rows: 1, placeholder: 'Heart Attack, Infection, Asthma, Stroke, etc.' %></td>
+                                <td>Health History: <%= f.text_area :clientFamilyHealthHistory, class: 'form-control', cols: 50, rows: 1, placeholder: 'Siblings, Their births, Mother\'s births' %></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Current Pregnancy</legend>
+                        <table class="table">
+                            <tr>
+                                <td>Nutrition: <%= f.text_area :Nutrition, class: 'form-control', cols: 50, row: 1 %></textarea></td>
+                                <td>Exercise: <%= f.text_area :Exercise, class: 'form-control', cols: 50, row: 1 %></textarea></td>
+                            </tr>
+                            <tr>
+                                <td>General State of Health: <%= f.text_area :GenStateHealth, class: 'form-control', cols: 50, row: 1 %></textarea></td>
+                                <td>Emotional Well-Being: <%= f.text_area :EmotionalWellBeing, class: 'form-control', cols: 50, row: 1 %></textarea></td>
+                            </tr>
+                            <tr>
+                                <td>Rest and Sleep: <%= f.text_area :RestAndSleep, class: 'form-control', cols: 50, row: 1 %></textarea></td>
+                                <td>Supplements and Drugs: <%= f.text_area :SupplNdrugs, class: 'form-control', cols: 50, row: 1 %></textarea></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Concerns: <%= f.text_area :Concerns, class: 'form-control', cols: 50, row: 1 %></textarea></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <%= f.submit "Submit" , class: 'btn btn-primary'%>
+                <% end %>
+            </div>
+        </div>
+    </body>
+</html>

@@ -12,7 +12,7 @@
             </div>
             <div class="container">
                 <h1>CLIENT INFORMATION SHEET</h1>
-                <form>
+                <%= form_for @client do |f| %>
                     <fieldset>
                         <legend>Assigned Doulas</legend>
                         Assigned MBC Doula: <input type="text" name="mbcDoulaName" placeholder="First Last">
@@ -53,7 +53,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td rowspan="3">Address Line: <textarea name="clientAddLine" rows ="1" cols = "30" placeholder="6750 avenue de l'Espanade"></textarea></td>
+                                    <td rowspan="3">Address Line: <textarea name="clientAddrLine" rows ="1" cols = "30" placeholder="6750 avenue de l'Espanade"></textarea></td>
                                     <td>City: <input type="text" name="clientCity" placeholder="Montreal"></td>
                                 </tr>
                                 <tr>
@@ -106,14 +106,15 @@
                             </tr>
                             <tr>
                                 <td>Rest and Sleep: <textarea name="RestAndSleep" id="" cols="50" rows="1"></textarea></td>
-                                <td>Supplements and Drugs: <textarea name="SupNdrugs" id="" cols="50" rows="1"></textarea></td>
+                                <td>Supplements and Drugs: <textarea name="SupplNdrugs" id="" cols="50" rows="1"></textarea></td>
                             </tr>
                             <tr>
                                 <td colspan="2">Concerns: <textarea name="Concerns" id="" cols="60" rows="1"></textarea></td>
                             </tr>
                         </table>
                     </fieldset>
-                </form>
+                    <input class="btn btn-default" type="submit">
+                <%= end %>
             </div>
         </div>
     </body>
